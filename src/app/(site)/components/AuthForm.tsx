@@ -1,16 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { useForm, FieldValues, SubmitHandler } from "react-hook-form";
 import axios from "axios";
 import { toast } from "react-hot-toast";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import Input from "@/components/inputs/Input";
 import Button from "@/components/Button";
 import AuthSocialButton from "./AuthSocialButton";
 import { BsGithub, BsGoogle } from "react-icons/bs";
 
 export default function AuthForm() {
+  const session = useSession();
+  const router = useRouter();
   const [loginOrRegister, setLoginOrRegister] =
     useState<LoginOrRegister>("LOGIN");
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -25,6 +28,10 @@ export default function AuthForm() {
       password: "",
     },
   });
+
+  useEffect(() => {
+    if (session?.status === "authenticated") router.push('/users');
+  }, [session?.status]);
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);

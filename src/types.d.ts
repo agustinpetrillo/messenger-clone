@@ -24,3 +24,7 @@ interface AuthSocialButtonProps {
   icon: IconType;
   onClick: () => void;
 }
+
+interface AuthContextProps {
+  children: React.ReactNode;
+}
