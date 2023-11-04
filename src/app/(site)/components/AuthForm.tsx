@@ -30,7 +30,7 @@ export default function AuthForm() {
   });
 
   useEffect(() => {
-    if (session?.status === "authenticated") router.push('/users');
+    if (session?.status === "authenticated") router.push("/users");
   }, [session?.status]);
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
@@ -39,6 +39,7 @@ export default function AuthForm() {
     if (loginOrRegister === "REGISTER") {
       axios
         .post("/api/register", data)
+        .then(() => signIn("credentials", data))
         .catch(() => toast.error("Something went wrong!"))
         .finally(() => setIsLoading(false));
     }
@@ -54,6 +55,7 @@ export default function AuthForm() {
           }
           if (callback?.ok && !callback?.error) {
             toast.success("Login successfully");
+            router.push("/users");
           }
         })
         .finally(() => setIsLoading(false));
