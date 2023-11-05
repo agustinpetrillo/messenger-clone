@@ -43,3 +43,11 @@ interface MobileItemProps {
   active?: boolean;
   onClick?: () => void;
 }
+
+interface DesktopSidebarProps {
+  currentUser: User;
+}
+
+interface AvatarProps {
+  user?: User;
+}
