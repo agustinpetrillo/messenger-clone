@@ -28,3 +28,18 @@ interface AuthSocialButtonProps {
 interface AuthContextProps {
   children: React.ReactNode;
 }
+
+interface DesktopItemProps {
+  label: string;
+  icon: Icon;
+  href: string;
+  onClick?: () => void;
+  active?: boolean;
+}
+
+interface MobileItemProps {
+  href: string;
+  icon: any;
+  active?: boolean;
+  onClick?: () => void;
+}
