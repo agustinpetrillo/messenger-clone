@@ -51,3 +51,11 @@ interface DesktopSidebarProps {
 interface AvatarProps {
   user?: User;
 }
+
+interface UserListProps {
+  items: User[];
+}
+
+interface UserBoxProps {
+  data: User;
+}
