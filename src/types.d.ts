@@ -59,3 +59,17 @@ interface UserListProps {
 interface UserBoxProps {
   data: User;
 }
+
+interface ConversationListProps {
+  initialItems: FullConversationType[];
+}
+
+interface FullMessageType extends Message {
+  sender: User;
+  seen: User[];
+}
+
+interface FullConversationType extends Conversation {
+  users: User[];
+  messages: FullMessageType[];
+}
