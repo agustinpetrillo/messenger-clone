@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import getCurrentUser from "@/actions/getCurrentUser";
 import prisma from "@/libs/prismadb";
 
-export default async function POST(request: Request) {
+export async function POST(request: Request) {
   try {
     const currentUser = await getCurrentUser();
     const { userId, isGroup, members, name } = await request.json();
