@@ -4,6 +4,7 @@ import { useState } from "react";
 import useRoutes from "@/hooks/useRoutes";
 import DesktopItem from "./DesktopItem";
 import Avatar from "../Avatar";
+import { DesktopSidebarProps } from "@/types";
 
 export default function DesktopSidebar({ currentUser }: DesktopSidebarProps) {
   const routes = useRoutes();

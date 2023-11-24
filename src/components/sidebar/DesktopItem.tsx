@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import clsx from "clsx";
+import { DesktopItemProps } from "@/types";
 
 export default function DesktopItem({
   label,

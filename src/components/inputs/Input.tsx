@@ -1,7 +1,8 @@
 "use client";
 
-import clsx from "clsx";
 import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
+import clsx from "clsx";
+import { InputProps } from "@/types";
 
 export default function Input({
   label,

@@ -1,6 +1,7 @@
 "use client";
 
 import clsx from "clsx";
+import { ButtonProps } from "@/types";
 
 export default function Button({
   type,

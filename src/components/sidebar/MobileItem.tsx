@@ -1,5 +1,6 @@
 import Link from "next/link";
 import clsx from "clsx";
+import { MobileItemProps } from "@/types";
 
 export default function MobileItem({
   href,
