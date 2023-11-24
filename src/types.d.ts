@@ -1,6 +1,8 @@
-type LoginOrRegister = "LOGIN" | "REGISTER";
+import { Conversation, Message } from "@prisma/client";
 
-interface InputProps {
+export type LoginOrRegister = "LOGIN" | "REGISTER";
+
+export interface InputProps {
   label: string;
   id: string;
   type?: string;
@@ -10,7 +12,7 @@ interface InputProps {
   disabled?: boolean;
 }
 
-interface ButtonProps {
+export interface ButtonProps {
   type?: "button" | "submit" | "reset" | undefined;
   fullWidth?: boolean;
   children?: React.ReactNode;
@@ -20,16 +22,16 @@ interface ButtonProps {
   disabled?: boolean;
 }
 
-interface AuthSocialButtonProps {
+export interface AuthSocialButtonProps {
   icon: IconType;
   onClick: () => void;
 }
 
-interface AuthContextProps {
+export interface AuthContextProps {
   children: React.ReactNode;
 }
 
-interface DesktopItemProps {
+export interface DesktopItemProps {
   label: string;
   icon: Icon;
   href: string;
@@ -37,44 +39,44 @@ interface DesktopItemProps {
   active?: boolean;
 }
 
-interface MobileItemProps {
+export interface MobileItemProps {
   href: string;
   icon: any;
   active?: boolean;
   onClick?: () => void;
 }
 
-interface DesktopSidebarProps {
+export interface DesktopSidebarProps {
   currentUser: User;
 }
 
-interface AvatarProps {
+export interface AvatarProps {
   user?: User;
 }
 
-interface UserListProps {
+export interface UserListProps {
   items: User[];
 }
 
-interface UserBoxProps {
+export interface UserBoxProps {
   data: User;
 }
 
-interface ConversationListProps {
+export interface ConversationListProps {
   initialItems: FullConversationType[];
 }
 
-interface FullMessageType extends Message {
+export interface FullMessageType extends Message {
   sender: User;
   seen: User[];
 }
 
-interface FullConversationType extends Conversation {
+export interface FullConversationType extends Conversation {
   users: User[];
   messages: FullMessageType[];
 }
 
-interface ConversationBoxProps {
+export interface ConversationBoxProps {
   data: FullConversationType;
   selected?: boolean;
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import UserBox from "./UserBox";
+import { UserListProps } from "@/types";
 
 export default function UserList({ items }: UserListProps) {
   return (

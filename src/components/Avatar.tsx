@@ -1,5 +1,6 @@
 "use client";
 
+import { AvatarProps } from "@/types";
 import Image from "next/image";
 // import useActiveList from "@/hooks/useActiveList";
 

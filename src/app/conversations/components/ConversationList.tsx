@@ -6,6 +6,7 @@ import clsx from "clsx";
 import { MdOutlineGroupAdd } from "react-icons/md";
 import useConversation from "@/hooks/useConversation";
 import ConversationBox from "./ConversationBox";
+import { ConversationListProps, FullConversationType } from "@/types";
 
 export default function ConversationList({
   initialItems,

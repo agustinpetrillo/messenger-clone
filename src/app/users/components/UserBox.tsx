@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import Avatar from "@/components/Avatar";
+import { UserBoxProps } from "@/types";
 
 export default function UserBox({ data }: UserBoxProps) {
   const router = useRouter();
