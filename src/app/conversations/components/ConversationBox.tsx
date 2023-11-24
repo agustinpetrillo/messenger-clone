@@ -71,6 +71,14 @@ export default function ConversationBox({
               </p>
             )}
           </div>
+          <p
+            className={clsx(
+              "text-sm truncate",
+              hasSeen ? "text-gray-500" : "text-black font-medium"
+            )}
+          >
+            {lastMessageText}
+          </p>
         </div>
       </div>
     </div>
