@@ -7,6 +7,7 @@ import { Conversation, Message, User } from "@prisma/client";
 import { format } from "date-fns";
 import clsx from "clsx";
 import useOtherUser from "@/hooks/useOtherUser";
+import Avatar from "@/components/Avatar";
 import { ConversationBoxProps } from "@/types";
 
 export default function ConversationBox({
@@ -45,11 +46,19 @@ export default function ConversationBox({
     if (lastMessage?.image) return "Sent an image";
 
     if (lastMessage?.body) return lastMessage?.body;
+
+    return "Started a conversation";
   }, [lastMessage]);
 
   return (
-    <div>
-      <div></div>
+    <div
+      onClick={() => handleClick()}
+      className={clsx(
+        "w-full relative flex items-center space-x-3 hover:bg-neutral-100 rounded-lg transition cursor-pointer",
+        selected ? "bg-neutral-100" : "bg-white"
+      )}
+    >
+      <Avatar user={otherUser} />
     </div>
   );
 }
