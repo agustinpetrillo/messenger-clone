@@ -73,3 +73,8 @@ interface FullConversationType extends Conversation {
   users: User[];
   messages: FullMessageType[];
 }
+
+interface ConversationBoxProps {
+  data: FullConversationType;
+  selected?: boolean;
+}
