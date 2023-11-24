@@ -54,11 +54,25 @@ export default function ConversationBox({
     <div
       onClick={() => handleClick()}
       className={clsx(
-        "w-full relative flex items-center space-x-3 hover:bg-neutral-100 rounded-lg transition cursor-pointer",
+        "w-full relative p-3 flex items-center space-x-3 hover:bg-neutral-100 rounded-lg transition cursor-pointer",
         selected ? "bg-neutral-100" : "bg-white"
       )}
     >
       <Avatar user={otherUser} />
+      <div className="flex-1 min-w-0">
+        <div className="focus:outline-none">
+          <div className="flex items-center justify-between mb-1">
+            <p className="font-medium text-gray-900 text-md">
+              {data.name || otherUser.name}
+            </p>
+            {lastMessage?.createdAt && (
+              <p className="text-xs font-light text-gray-400">
+                {format(new Date(lastMessage.createdAt), "p")}
+              </p>
+            )}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
