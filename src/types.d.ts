@@ -80,3 +80,9 @@ export interface ConversationBoxProps {
   data: FullConversationType;
   selected?: boolean;
 }
+
+export interface HeaderProps {
+  conversation: Conversation & {
+    users: User[];
+  };
+}
