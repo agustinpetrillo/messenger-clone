@@ -3,8 +3,8 @@
 import axios from "axios";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import useConversation from "@/hooks/useConversation";
-import { HiPhoto } from "react-icons/hi2";
 import MessageInput from "./MessageInput";
+import { HiPaperAirplane, HiPhoto } from "react-icons/hi2";
 
 export default function Form() {
   const { conversationId } = useConversation();
@@ -39,6 +39,12 @@ export default function Form() {
           required
           placeholder="Write a message..."
         />
+        <button
+          type="submit"
+          className="p-2 transition rounded-full cursor-pointer bg-sky-500 hover:bg-sky-600"
+        >
+          <HiPaperAirplane size={18} className="text-white" />
+        </button>
       </form>
     </div>
   );
