@@ -2,6 +2,8 @@ import getConversationById from "@/actions/getConversationById";
 import getMessages from "@/actions/getMessages";
 import EmptyState from "@/components/EmptyState";
 import Header from "./components/Header";
+import Body from "./components/Body";
+import Form from "./components/Form";
 
 export default async function ConversationId({ params }: { params: string }) {
   const conversation = await getConversationById(params);
@@ -21,6 +23,8 @@ export default async function ConversationId({ params }: { params: string }) {
     <div className="h-full lg:pl-80">
       <div className="flex flex-col h-full">
         <Header conversation={conversation} />
+        <Body />
+        <Form />
       </div>
     </div>
   );

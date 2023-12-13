@@ -1,4 +1,5 @@
 import { Conversation, Message } from "@prisma/client";
+import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
 
 export type LoginOrRegister = "LOGIN" | "REGISTER";
 
@@ -85,4 +86,13 @@ export interface HeaderProps {
   conversation: Conversation & {
     users: User[];
   };
+}
+
+export interface MessageInputProps {
+  id: string;
+  placeholder?: string;
+  type?: string;
+  errors: FieldErrors;
+  register: UseFormRegister<FieldValues>;
+  required?: boolean;
 }
