@@ -5,9 +5,13 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 import Form from "./components/Form";
 
-export default async function ConversationId({ params }: { params: string }) {
-  const conversation = await getConversationById(params);
-  const messages = await getMessages(params);
+export default async function ConversationId({
+  params,
+}: {
+  params: { conversationId: string };
+}) {
+  const conversation = await getConversationById(params.conversationId);
+  const messages = await getMessages(params.conversationId);
 
   if (!conversation) {
     return (
