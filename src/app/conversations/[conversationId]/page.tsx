@@ -27,7 +27,7 @@ export default async function ConversationId({
     <div className="h-full lg:pl-80">
       <div className="flex flex-col h-full">
         <Header conversation={conversation} />
-        <Body />
+        <Body initialMessages={messages} />
         <Form />
       </div>
     </div>

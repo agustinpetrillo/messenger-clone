@@ -96,3 +96,12 @@ export interface MessageInputProps {
   register: UseFormRegister<FieldValues>;
   required?: boolean;
 }
+
+export interface BodyProps {
+  initialMessages: FullMessageType[];
+}
+
+export interface MessageBoxProps {
+  data: FullMesageType;
+  isLast?: boolean;
+}
