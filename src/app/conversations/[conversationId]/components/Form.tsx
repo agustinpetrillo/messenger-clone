@@ -53,10 +53,7 @@ export default function Form() {
           required
           placeholder="Write a message..."
         />
-        <button
-          type="submit"
-          className="p-2 transition rounded-full cursor-pointer bg-sky-500 hover:bg-sky-600"
-        >
+        <button className="p-2 transition rounded-full cursor-pointer bg-sky-500 hover:bg-sky-600">
           <HiPaperAirplane size={18} className="text-white" />
         </button>
       </form>
