@@ -16,7 +16,7 @@ export default function Body({ initialMessages }: BodyProps) {
       {messages.map((message, i) => (
         <MessageBox
           isLast={i === messages.length - 1}
-          key={messages.id}
+          key={message.id}
           data={message}
         />
       ))}
